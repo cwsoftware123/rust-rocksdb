@@ -93,6 +93,7 @@ pub mod properties;
 mod slice_transform;
 mod snapshot;
 mod sst_file_writer;
+mod timestamp;
 mod transactions;
 mod write_batch;
 

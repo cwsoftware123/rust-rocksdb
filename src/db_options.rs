@@ -235,6 +235,7 @@ pub struct BlockBasedOptions {
 
 pub struct ReadOptions {
     pub(crate) inner: *mut ffi::rocksdb_readoptions_t,
+    pub(crate) timestamp: Option<Vec<u8>>,
     iterate_upper_bound: Option<Vec<u8>>,
     iterate_lower_bound: Option<Vec<u8>>,
 }
@@ -3456,6 +3457,7 @@ impl Default for ReadOptions {
         unsafe {
             Self {
                 inner: ffi::rocksdb_readoptions_create(),
+                timestamp: None,
                 iterate_upper_bound: None,
                 iterate_lower_bound: None,
             }
